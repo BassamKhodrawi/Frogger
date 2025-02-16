@@ -1,61 +1,41 @@
-# GDI+
-Unsere Sammlung von Tipps und Tricks zum Thema Grafikprogrammierung mit GDI+.
+# Frogger
 
-![image alt](https://github.com/GSO-SW/frogger-swe_frogger_k-z/blob/d1bfa1abba48c67e9d6ea30b8a3882044c904fae/Github%20Kater.jpg)
+Eine C#-Implementierung des klassischen Frogger-Spiels. Dieses Projekt soll das klassische Arcade-Spiel nachbilden, bei dem der Spieler einen Frosch steuert, der versucht, eine stark befahrene Straße und einen Fluss zu überqueren.
 
-## Basics
-### Einstellungen
-- `ResizeRedraw = true;` ruft das Paint-Event bei jeder Größenänderung der Form auf.
-- `DoubleBuffered = true;` verhindert Flackern bei Animationen.
+## Funktionen
 
-### Pain-Event überschreiben
-Statt ein Paint-Event über die Eigenschaften einer Form hinzuzufügen, kann man auch das vorhandene Paint-Event überschreiben. Diese Technik funktioniert, weil unsere Form von Windows-Forms erbt.
-```cs
-protected override void OnPaint(PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
+- Klassisches Frogger-Gameplay
+- Mehrere Level mit steigender Schwierigkeit
 
-            int w = this.ClientSize.Width;
-            int h = this.ClientSize.Height;
-            // ...
-        }
-```
+## Installation
 
-## Klassen / Ereignisse
-### Timer
-Ein Timer führt in regelmäßigen Abständen ein `Tick`-Event aus. Nachdem ein Timer deklariert wurde, z.B. mit `private Timer tmrMeinTimer;` muss er noch initialisiert werden `tmrMeinTimer = new Timer();`. Anschließend kann man:
-- die Zeit zwischen jedem `Tick`-Event einstellen (`+ Interval { get; set; }: int`) und
-- den Timer starten (`+ Start():void`) oder
-- stoppen (`+ Stop():void`) oder
-- den Zustand abfragen. (`+ Enabled{ get; set; }: bool`) (Standard ist ausgeschaltet: `enabled = false`)
-- das Tick-Ereignis zuweisen (`timer.Tick += Timer_Tick`)
+Um mit diesem Projekt zu beginnen, folgen Sie diesen Schritten:
 
-Das Tick-Event kann man so erstellen: 
-```cs
-private void Timer_Tick(object sender, EventArgs e)
-    {
-        //...
-    }
-```
+1. **Repository klonen:**
+    ```bash
+    git clone https://github.com/BassamKhodrawi/Frogger.git
+    ```
 
+2. **Projekt in Visual Studio öffnen:**
+    - Öffnen Sie Visual Studio.
+    - Klicken Sie auf "Ein Projekt oder eine Lösung öffnen".
+    - Navigieren Sie zum geklonten Repository-Ordner und wählen Sie die Lösungsdatei (`.sln`) aus.
 
-## Tipps und Tricks
-Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es macht. 
-- Sie können [CodeBlöcke mit Syntax-Highlighting](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#syntax-highlighting) einsetzen
-- Wird es zu unübersichtlich? Sie können auch Unterordner mit Beispiel-Code anlegen und auf die entsprechenden Dateien verlinken. [Inspiration](https://github.com/gsoTH/flaskShowcase/tree/master/datenbanken).
-- Die folgende Liste kann gerne ergänzt werden :)
+## Nutzung
 
-### Bewegung animieren
+1. **Anwendung ausführen:**
+    - Drücken Sie `F5` in Visual Studio, um die Anwendung zu erstellen und auszuführen.
+    - Verwenden Sie die Tastatur, um den Frosch zu steuern und durch die Level zu navigieren.
 
-### Objekte mit Tasten steuern
+2. **Anwendung modifizieren:**
+    - Sie können die Anwendung modifizieren, indem Sie die Quelldateien im Ordner `src` bearbeiten.
 
-### Verhindern, dass ein Spieler aus dem Bild läuft
+## Voraussetzungen
 
-### Spiel pausieren
+- Visual Studio 2019 oder später
+- .NET Framework 4.7.2 oder später
 
-### Ihr schönstes Ergebnis
+## Kontakt
 
-
-
-
-
+- **Autor:** [Bassam Khodrawi](https://github.com/BassamKhodrawi)
+- **Repository:** [Frogger](https://github.com/BassamKhodrawi/Frogger)
